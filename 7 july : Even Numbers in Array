@@ -1,0 +1,39 @@
+//Print even numbers from the array// 
+import java.util.*;
+class evennumbers
+ { 
+	public static void main(String args[])
+	 { 
+	  Scanner sc=new Scanner(System.in);
+ 	  int i;
+          System.out.print("Enter array size:");
+	  int n=sc.nextInt(); 
+	  int ar[]=new int[n];
+	  System.out.print("Enter array elements:");
+		for(i=0;i<n;i++)
+ 		 {
+		  ar[i]=sc.nextInt(); 
+		 }
+		for(i=0;i<n;i++) 
+		 { 
+		  if(ar[i]%2==0) 
+		  System.out.print(ar[i]+" ");
+		 }
+ 	}
+ }
+
+
+/*
+OUTPUT:
+Enter array size:8
+Enter array elements:
+34
+56
+78
+45
+67
+89
+44
+23
+34 56 78 44
+*/
