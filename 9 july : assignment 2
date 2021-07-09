@@ -1,0 +1,41 @@
+//assignment2: count the number of lentgh of the entire data without including spaces. //
+
+import java.util.*;
+public class StringSplit
+{
+public static void main(String ar[])
+	{ 
+	int sum=0;
+	String str;
+	Scanner sc=new Scanner(System.in);
+	
+	System.out.print("Enter String : ");
+	str=sc.nextLine();
+	String ch[]=str.split(" ");
+	int n= ch.length;
+	
+	if(n==0)
+	System.out.print(n);
+	else
+	 {
+		for(int i=0;i<n;i++)
+		{
+	  	 String st = ch[i];
+	 	  int m = st.length();
+		  sum=sum+m;
+		}
+	System.out.println(sum);
+	 }
+		
+	}
+}
+
+/*
+OUTPUT:
+
+Enter String : sasi devi polam
+13
+
+Enter String : aditha degree college
+19
+*/
