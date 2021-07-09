@@ -1,0 +1,48 @@
+ //assignments3: write a program to print given string is palindrome or not//
+
+import java.util.*;
+class Palindrome
+{  
+ public static void main(String args[])
+	{   
+	  String str,rev=""; 
+  	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter string:");
+	  str=sc.nextLine();
+   int len = str.length();   
+      for ( int i = len - 1; i >= 0; i-- )  
+         rev = rev + str.charAt(i);  
+      if (str.equals(rev))  
+         System.out.println(" palindrome");  
+      else  
+         System.out.println("not palindrome");    
+	}  
+}  
+
+/*
+OUTPUT:
+
+Enter string:
+poop
+ palindrome
+
+Enter string:
+sai
+not palindrome
+
+Enter string:
+12321
+ palindrome
+
+Enter string:
+23423
+not palindrome
+
+Enter string:
+$@$!$@$
+ palindrome
+ 
+Enter string:
+@!#
+not palindrome
+*/
