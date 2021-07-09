@@ -33,42 +33,6 @@ public static void main(String ar[])
 	}
 }
 
-OUTPUT:
-//assignment1: count the number of symbols,letters,digits and if they are equal print "yes" otherwise print "no"//
-import java.util.*;
-
-public class CountSt
-{
-public static void main(String ar[])
-	{ 
-	
-	Scanner sc=new Scanner(System.in);
-
-	System.out.print("Enter String : ");
-	String str=sc.next();
-	int u=0,l=0,d=0,s=0;
-	char ch[] = str.toCharArray();
-	
-	for(int i=0;i<ch.length;i++)
-	  {
-		if(Character.isUpperCase(ch[i]))
-		u++;
-		else if(Character.isLowerCase(ch[i]))
-		l++;
-		else if(Character.isDigit(ch[i]))
-		d++;
-		else 
-		s++;
-	  }
-	int sum=u+l;
-	if(sum==d && d==s && s==sum)
-	System.out.print("yes");
-	else
-	System.out.print("no");
-		
-	}
-}
-
 /*
 OUTPUT:
 
