@@ -1,0 +1,32 @@
+// Write a program to print factorial of a given number using Recursive function //
+
+import java.util.*;
+class FactorialWithRecursion
+{  
+ static int factorial(int n)
+ {    
+  if (n == 0)    
+    return 1;    
+  else    
+    return(n*factorial(n-1));    
+ }    
+ public static void main(String args[])
+ {  
+  int f=1;  
+  Scanner sc=new Scanner(System.in);
+	System.out.print("Enter a number: ");
+	int x=sc.nextInt();
+  f=factorial(x);   
+  System.out.print("Factorial of the number is: "+f);    
+ }  
+}  
+
+/*
+OUTPUT:
+
+Enter a number: 5
+Factorial of the number is: 120
+
+Enter a number: 12
+Factorial of the number is: 479001600
+*/
