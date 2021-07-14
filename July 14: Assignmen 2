@@ -1,0 +1,67 @@
+// PRONRAM TO PRINT TWIN PRIME IN A GIVEN RANGE //
+
+
+
+import java.io.*;
+import java.util.*; 
+class TwinPrimes
+{
+ 
+    static void printTwinPrime(int x, int n)
+    {
+        boolean prime[] = new boolean[n + 1];
+	for (int i=1;i<=x;i++)
+	  {
+            prime[i]=true;
+ 	  }
+        for (int j=2;j*j<=x;j++) 
+	{
+            if (prime[j]==true) 
+	    {
+                for (int i=j*2;i<=x;i+=j)
+                    prime[i]=false;
+            }
+        }
+         
+        for (int k=1;k<=n;k++)
+	  {
+            prime[k]=true;
+ 	  }
+        for (int l=2;l*l<=n;l++) 
+	{
+            if (prime[l]==true) 
+	    {
+                for (int k=l*2;k<=n;k+=l)
+                    prime[k]=false;
+            }
+        }
+        for (int m=x;m<=n-2;m++) 
+        {
+            if (prime[m]==true && prime[m + 2]==true && prime[m]==true && prime[m+ 2]==true)
+             
+               System.out.println("("+m+","+(m+2)+")");
+        }
+    }
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+	System.out.print("Enter first number x=");
+	int x=sc.nextInt();
+	System.out.print("Enter last number n=");
+	int n=sc.nextInt();
+        printTwinPrime(x,n);
+    }
+}
+
+/*
+OUTPUT:
+Enter first number x=25
+Enter last number n=50
+(29,31)
+(41,43)
+
+Enter first number x=50
+Enter last number n=100
+(59,61)
+(71,73)
+*/
