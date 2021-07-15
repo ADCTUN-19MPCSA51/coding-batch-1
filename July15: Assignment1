@@ -1,0 +1,70 @@
+//Java programS to join two array lists and print in sorted order //
+
+import java.util.*;
+class Assign1july15
+{
+public static void main(String args[])
+ {
+        ArrayList<String>a=new ArrayList<String>();
+        ArrayList<String>b=new ArrayList<String>();
+
+	a.add("ram");
+	a.add("raghu");
+	a.add("ravan");
+	System.out.println("List a: " +a);
+
+	b.add("leela");
+	b.add("teena");
+	b.add("leena");
+        System.out.println("List b: " +b);
+
+        a.addAll(b);
+   	System.out.println("Merged List : " +a);
+
+	Collections.sort(a);
+	System.out.print("Final List : " +a);  
+ }
+}
+
+/*
+OUTPUT:
+
+List a: [ram, raghu, ravan]
+List b: [leela, teena, leena]
+Merged List : [ram, raghu, ravan, leela, teena, leena]
+Final List : [leela, leena, raghu, ram, ravan, teena]
+*/
+
+import java.util.*;
+class Assign1july15
+{
+public static void main(String args[])
+ {
+        ArrayList<Integer>a=new ArrayList<Integer>();
+        ArrayList<Integer>b=new ArrayList<Integer>();
+
+	a.add(500);
+	a.add(200);
+	a.add(700);
+	System.out.println("List a: " +a);
+
+	b.add(900);
+	b.add(10);
+	b.add(300);
+        System.out.println("List b: " +b);
+
+        a.addAll(b);
+   	System.out.println("Merged List : " +a);
+
+	Collections.sort(a);
+	System.out.print("Final List : " +a);  
+ }
+}
+
+/*
+OUTPUT:
+List a: [500, 200, 700]
+List b: [900, 10, 300]
+Merged List : [500, 200, 700, 900, 10, 300]
+Final List : [10, 200, 300, 500, 700, 900]
+*/
