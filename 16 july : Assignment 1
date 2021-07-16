@@ -1,0 +1,48 @@
+/*  Write a Java program to read n elements using Scanner,
+ update specific array element by given element.
+ if value found print modified list else print "False".
+ Do program for below 2 outputs.  */
+
+import java.util.*;
+class assign1july16
+{
+ public static void main(String arg[])
+ {
+	Scanner sc=new Scanner(System.in);
+ArrayList<Integer> arr=new ArrayList<Integer>();
+	System.out.print("Enter n value : ");
+	int n=sc.nextInt();
+
+	System.out.print("Enter array values : ");
+	for(int i=0;i<n;i++)
+	   arr.add(sc.nextInt());
+	
+	System.out.print("Enter values to search, replace : ");
+	
+	int key=sc.nextInt();
+        int x=sc.nextInt();
+	boolean b=arr.contains(key);
+	
+	if(b ==false)
+	System.out.println("output: "+b);
+	else
+	{
+	arr.set(arr.indexOf(key),x);
+	System.out.println("output: "+arr);
+	}
+	
+ }
+}
+
+/*
+OUTPUT:
+Enter n value : 5
+Enter array values : 10 20 30 40 50
+Enter values to search, replace : 20 99
+output: [10, 99, 30, 40, 50]
+
+Enter n value : 5
+Enter array values : 10 20 30 40 50
+Enter values to search, replace : 2 99
+output: false
+*/
