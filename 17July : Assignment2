@@ -1,0 +1,62 @@
+
+
+import java.util.*;
+ class assign2july17
+ {
+   public static void main(String args[])
+	{
+	 Vector v=new Vector();
+	Scanner sc=new Scanner(System.in);
+	int n=6;
+		v.add(101);
+		v.add("Rama");
+		v.add(6.58);
+		v.add(102);
+		v.add("Gita");
+		v.add(8.98);
+	System.out.println(v);
+	v.remove(v.indexOf("Gita"));
+	for(int i=0;i<=n;i++)
+	{
+		try
+		{       
+	System.out.print(v.get(i)+" ");
+		}
+		catch(IndexOutOfBoundsException e)
+		{
+		}
+	}
+	System.out.println();
+	boolean a=v.contains(6.58);
+	if(a==true)
+	{
+	  v.set(v.indexOf(6.58),9.17);
+	}
+	for(int j=0;j<=n;j++)
+	{
+		try
+		{       
+	System.out.print(v.get(j)+" ");
+		}
+		catch(IndexOutOfBoundsException e)
+		{
+		}
+	}
+
+	System.out.println();
+	boolean b=v.contains("sita");
+	if(b!=true)
+	{
+	  System.out.println(b);
+	}
+	
+ }
+}
+
+/*
+OUTPUT:
+[101, Rama, 6.58, 102, Gita, 8.98]
+101 Rama 6.58 102 8.98
+101 Rama 9.17 102 8.98
+false
+*/
