@@ -1,0 +1,303 @@
+import java.util.*; 
+class assign1july17 
+{ 
+ public static void main(String args[]) 
+  { 
+	Scanner sc=new Scanner(System.in); 
+	LinkedList<Integer> x=new LinkedList<Integer>(); 
+	int n,ch,index;
+	x.add(33); 
+	x.add(44); 
+	x.add(55); 
+	do 
+	{
+ 	System.out.println("1.BeginInsert \n2.EndInsert \n3.Position Insert \n4.Begin Delete \n5.End Delete \n6.Position Delete \n7.Display \n8.Exit..... \nEnter your Choice:");
+ 	ch=sc.nextInt(); 
+	
+ 	switch(ch) 
+		{ 
+		case 1:
+		 	System.out.println("Enter n value");
+ 		 	n=sc.nextInt(); 
+		 	x.addFirst(n);
+ 		   break;
+
+ 		case 2:
+		 	System.out.println("Enter n value");
+ 		 	n=sc.nextInt();
+ 		 	x.addLast(n); 
+		   break;
+
+		case 3:try
+			{
+		 	System.out.println("Enter n value");
+ 		 	n=sc.nextInt();
+			System.out.println("Enter index value");
+			index=sc.nextInt();
+ 		 	x.add(index,n); 
+			}
+			catch(IndexOutOfBoundsException e)
+			{
+			System.out.println("index exeded, enter valid index next time");
+			}
+		   break;
+
+		case 4:
+ 		 	x.removeFirst(); 
+		   break;
+
+		case 5:
+ 		 	x.removeLast(); 
+		   break;
+
+		case 6:try
+			{
+			System.out.println("Enter index value");
+ 		 	index=sc.nextInt();
+			x.remove(index);
+			}
+			catch(IndexOutOfBoundsException e)
+			{
+			System.out.println("index exeded, enter valid index next time");
+			}
+		   break; 
+		
+		case 7:
+		 	System.out.println(x);
+ 		 	
+		   break;
+
+ 		default:
+			System.out.println("Invalid Choice");
+		} 
+	}while(ch<8);
+ 	 
+ } 
+}
+
+/*
+OUTPUT:
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+1
+Enter n value
+22
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+1
+Enter n value
+11
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+2
+Enter n value
+77
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+2
+Enter n value
+99
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+7
+[11, 22, 33, 44, 55, 77, 99]
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+3
+Enter n value
+66
+Enter index value
+5
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+7
+[11, 22, 33, 44, 55, 66, 77, 99]
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+3
+Enter n value
+88
+Enter index value
+8
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+7
+[11, 22, 33, 44, 55, 66, 77, 99, 88]
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+4
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+7
+[22, 33, 44, 55, 66, 77, 99, 88]
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+5
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+7
+[22, 33, 44, 55, 66, 77, 99]
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+6
+Enter index value
+1
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+7
+[22, 44, 55, 66, 77, 99]
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+3
+Enter n value
+111
+Enter index value
+9
+index exeded, enter valid index next time
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+6
+Enter index value
+9
+index exeded, enter valid index next time
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+7
+[22, 44, 55, 66, 77, 99]
+1.BeginInsert
+2.EndInsert
+3.Position Insert
+4.Begin Delete
+5.End Delete
+6.Position Delete
+7.Display
+8.Exit.....
+Enter your Choice:
+8
+*/
