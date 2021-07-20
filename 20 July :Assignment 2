@@ -1,0 +1,40 @@
+/*
+Create an arraylist with following
+ n elements. Read k value .
+remove from arraylist values lessthan than k.
+Print Arraylist.
+*/
+
+import java.util.*;
+class assign2july20
+{
+public static void main(String args[])
+ {
+	HashMap<Integer,Integer> x=new HashMap<Integer,Integer>(); 
+	Scanner sc=new Scanner(System.in);
+	System.out.print("Enter n value: ");
+	int n=sc.nextInt();
+	int arr[]=new int[n];
+	System.out.print("Enter values into arraylist: ");
+	for(int i=0;i<n;i++)
+	{
+	  arr[i]=sc.nextInt();
+	}
+	
+	System.out.print("Enter k value: ");
+	int k=sc.nextInt();
+	for(int i=0;i<n;i++)
+	{
+	  if(arr[i]>k)
+	  System.out.print(arr[i]+" ");
+	}
+ }
+}
+
+/*
+OUTPUT:
+Enter n value: 7
+Enter values into arraylist: 30 40 15 20 25 7 99
+Enter k value: 20
+30 40 25 99
+*/
