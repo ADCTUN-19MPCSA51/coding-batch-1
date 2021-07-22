@@ -1,0 +1,69 @@
+/*Assignment 3:  Hashtable
+Create a  hashtable with following (key,salary):
+101    50000
+102    45000
+103    35000
+104    40000
+105    45000
+1. print hash table using data
+2. read a key to search i.e., 103 , if found 
+increase salary 5000 to original salary & print all data again.
+3. if key not found, print "Value Not Found"
+*/
+
+import java.util.*; 
+class assign3july22
+{ 
+public static void main(String args[]) 
+   { 
+	Hashtable<Integer,Integer> x=new Hashtable<Integer,Integer>();
+	Scanner sc=new Scanner(System.in); 
+	x.put(101,50000);
+	x.put(102,45000); 
+	x.put(103,35000);
+	x.put(104,40000);
+	x.put(105,45000);
+	System.out.println(x); 
+	
+	System.out.print("Enter key value: ");
+	int key=sc.nextInt();
+	boolean b=x.containsKey(key);
+	if(b==true)
+	{
+	int val=x.get(key);
+	val=val+5000;
+	x.put(key,val);
+	System.out.print(x);
+	}
+	else
+	System.out.print("Value Not Found");
+	
+   } 
+}
+
+/*
+OUTPUT:
+enter n value
+5
+enter key,salery values:
+101 50000
+102 45000
+103 35000
+104 40000
+105 45000
+{105=45000, 104=40000, 103=35000, 102=45000, 101=50000}
+Enter key value: 103
+{105=45000, 104=40000, 103=40000, 102=45000, 101=50000}
+
+enter n value
+5
+enter key,salery values:
+101 50000
+102 45000
+103 35000
+104 40000
+105 45000
+{105=45000, 104=40000, 103=35000, 102=45000, 101=50000}
+Enter key value: 109
+Value Not Found
+*/
