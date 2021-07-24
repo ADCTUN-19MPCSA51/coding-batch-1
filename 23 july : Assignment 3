@@ -1,0 +1,35 @@
+//Write a stack program to read n elements into stack using scanner and PRINT maximum element and minimum element
+
+import java.util.*;
+public class assign3july23
+{
+public static void main(String ar[])
+	{ 
+	Stack<Integer> st=new Stack<Integer>();
+	Scanner sc=new Scanner(System.in);
+	System.out.print("Enter no.of elements: ");
+	int n=sc.nextInt();
+	System.out.print("Enter Elements: ");
+	
+	for(int i=0;i<n;i++)
+		st.push(sc.nextInt());
+
+	System.out.println(st);
+	System.out.println("max value : "+Collections.max(st));
+	System.out.println("min value : "+Collections.min(st));
+	
+	}
+}
+
+/*
+OUTPUT:
+Enter no.of elements: 5
+Enter Elements: 44
+33
+55
+22
+6
+[44, 33, 55, 22, 6]
+max value : 55
+min value : 6
+*/
