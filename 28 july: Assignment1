@@ -1,0 +1,49 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+class Assign1july28 {
+public static void main(String args[]){ 
+    Scanner sc=new Scanner(System.in); 
+    int x=100000; 
+    int prime[]=new int[x+1]; 
+    for(int i=0;i<=x;i++) 
+    { 
+        prime[i]=1; 
+    } 
+    prime[1]=0; 
+    for(int p=2;p*p<=x;p++) 
+    { 
+        if(prime[p]==1) 
+        for(int i=p*p;i<=x;i=i+p) 
+        { 
+            if(prime[i]==1) 
+            prime[i]=0; 
+        } 
+    } 
+    int n,m; 
+    int count=0; 
+    n=sc.nextInt(); 
+    m=sc.nextInt(); 
+    for(int j=n;j<=m;j++) 
+    { 
+        if(m-n>=2) 
+            if((prime[j]==1)&&(prime[j+2]==1)) 
+                count++; 
+    } 
+    System.out.println(count);
+    }   
+}
+
+/*OUTPUT:
+1
+50
+6   */
