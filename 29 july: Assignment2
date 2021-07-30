@@ -1,50 +1,77 @@
-/*	Write a program to print even positions of prime numbers in the given range?	*/
+//program to print N no.of primes & primes in even positions and odd positions ,by taking n as a input.//
+
 import java.util.*;
-class  CodingPrimes6
+class Codingprimes30july
 {
 	public static void main(String args[])
 	{
-		
 		Scanner sc=new Scanner(System.in);
-		int n=100000; 
-ArrayList<Integer> x=new ArrayList<Integer>();
-	int prime[]=new int[n+1]; 
-	for(int i=0;i<=n;i++)  
-		prime[i]=1;  
-	prime[1]=0; 
-	for(int p=2;p*p<=n;p++) 
-	{ 
-		if(prime[p]==1) 
-		for(int i=p*p;i<=n;i=i+p) 
-		{ 
-		if(prime[i]==1) 
-		prime[i]=0; 
-		} 
-	} 
-	int start,end; 
-	System.out.print("Enter prime starting range:"); 
-	start=sc.nextInt(); 
-	System.out.print("Enter prime ending range:"); 
-	end=sc.nextInt(); 
-
-	for(int j=start;j<=end;j++) 
-	{ 
-		if(prime[j]==1) 
+		int n=100000;
+		int prime[]=new int[n+1];
+		int seiveprime[]=new int[n];
+		for(int i=0;i<=n;i++)
 		{
-		x.add(j);	
+			prime[i]=1;
+		}
+		prime[1]=0;
+		for(int p=2;p*p<=n;p++)
+		{
+			if(prime[p]==1)
+				for(int i=p*p;i<=n;i=i+p)
+				{
+					if(prime[i]==1)
+						prime[i]=0;
+				}
+		}
+		int j=0;
+		//This loop stores N Prime numbers in Seiveprime array
+		for(int i=1;i<=n;i++)
+		{
+			if(prime[i]==1)
+			{
+				seiveprime[j]=i;
+				j++;
+			}
+		}
+
+		int x=sc.nextInt();
+		System.out.print(x+" primes are: ");
+		//This loop prints n primes
+		for(int i=0;i<x;i++)
+			System.out.print( seiveprime[i]+" ");
+
+		int k;
+		System.out.print("\n  primes in even positions are: ");
+		//This loop prints primes in even positions
+		for(int i=0;i<x;i++)
+		{
+			k=i+1;
+			if(k%2==0)
+				System.out.print( seiveprime[i]+" ");
+		}
+
+		System.out.print("\n  primes in odd positions are: ");
+		//This loop prints primes in odd positions
+		for(int i=0;i<x;i++)
+		{
+			k=i+1;
+			if(k%2==1)
+				System.out.print( seiveprime[i]+" ");
 		}
 	}
-try
-{
-	System.out.print("Values in even positions: ");
-	for(int k=1;k<=x.size();k+=2)
-	System.out.print(x.get(k)+" ");
-}
-catch(IndexOutOfBoundsException e){}
-	}
 }
 
-/*  OUTPUT:
-  Enter prime starting range:1
-  Enter prime ending range:50
-  Values in even positions: 3 7 13 19 29 37 43    */
+/*
+OUTPUT:
+10
+10 primes are: 2 3 5 7 11 13 17 19 23 29
+  primes in even positions are: 3 7 13 19 29
+  primes in odd positions are: 2 5 11 17 23
+E:\sasi>javac Codingprimes30july.java
+
+E:\sasi>java Codingprimes30july
+50
+50 primes are: 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103 107 109 113 127 131 137 139 149 151 157 163 167 173 179 181 191 193 197 199 211 223 227 229
+  primes in even positions are: 3 7 13 19 29 37 43 53 61 71 79 89 101 107 113 131 139 151 163 173 181 193 199 223 229
+  primes in odd positions are: 2 5 11 17 23 31 41 47 59 67 73 83 97 103 109 127 137 149 157 167 179 191 197 211 227
+  */
