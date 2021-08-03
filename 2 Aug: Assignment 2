@@ -1,0 +1,31 @@
+//Develop a program using prefix algorithm to  find factorial of  given number x for Q queries. Take maxSize as 1000.
+import java.util.*;
+class PrefixFactorial
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int q=sc.nextInt();
+		int n=1000;
+		int[] p=new int[n+1];
+		p[0]=1;
+		for(int i=1;i<n+1;i++)
+			p[i]=p[i-1]*i; 
+		for(int i=0;i<q;i++)
+		{
+			int sum=sc.nextInt();
+			System.out.println(p[sum]); 
+		}
+	}
+}
+
+/*OUTPUT:
+4
+4
+24
+5
+120
+8
+40320
+15
+2004310016    */
