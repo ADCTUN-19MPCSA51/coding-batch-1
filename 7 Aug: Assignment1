@@ -1,0 +1,28 @@
+//Bitwise Operators
+import java.util.*;
+class Geeks {
+    public static void main(String args[]) {
+	Scanner sc=new Scanner(System.in);
+	int a=sc.nextInt();
+	int b=sc.nextInt();
+	int c=sc.nextInt();
+        int d=0,f=0,g=0,e=0;
+        d=a^a;
+        System.out.println(d);
+        e=c^b;
+        System.out.println(e);
+        g=c|(a^a);
+        System.out.println(g);
+        e=(-e);
+        System.out.println(e);
+    }
+}
+
+/*OUTPUT:
+For Input:
+4 8 2
+Your Output is: 
+0
+10
+2
+-10     */
