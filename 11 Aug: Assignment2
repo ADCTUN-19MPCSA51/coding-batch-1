@@ -1,0 +1,47 @@
+//assignment-2:arranging elements in descending order using any sorting technique
+
+import java.util.*;
+class SelectionSortDecending
+{
+	public static void main(String args[])
+	{
+		int min;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter size of array: ");
+		int n=sc.nextInt();
+		int[] ar=new int[n];
+		System.out.println("enter array elements: ");
+			for(int k=0;k<n;k++)
+			{
+				ar[k]=sc.nextInt();
+			}
+		for(int i=0;i<n;i++)
+		{
+			min=i;
+			for(int j=i+1;j<n;j++)
+			{
+				if(ar[min]>ar[j])
+				{
+					min=j;	
+				}
+			}
+			int temp=ar[i];
+			ar[i]=ar[min];
+			ar[min]=temp;
+		}
+		System.out.println("decending order of Array elements after Selection Shorting: ");
+
+		for(int k=n-1;k>=0;k--)
+			System.out.print(ar[k]+" ");
+	}
+}
+
+/*
+OUTPUT:
+enter size of array:
+7
+enter array elements:
+123 345 987 876 6543 12 678
+decending order of Array elements after Selection Shorting:
+6543 987 876 678 345 123 12
+*/
